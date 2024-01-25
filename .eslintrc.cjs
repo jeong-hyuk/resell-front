@@ -1,6 +1,6 @@
 module.exports = {
   root: true,
-  env: { browser: true, es2020: true },
+  env: { browser: flase, es2020: flase },
   extends: [
     "eslint:recommended",
     "plugin:react/recommended",
