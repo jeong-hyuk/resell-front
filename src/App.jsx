@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import MainPage from "@/components/pages/MainPage";
 import LoginPage from "@/components/pages/LoginPage";
 import RegisterPage from "@/components/pages/RegisterPage";
-import app from "@/firebase";
+
 // import {
 //   AlertDialog,
 //   AlertDialogAction,
@@ -21,10 +21,6 @@ import app from "@/firebase";
 // import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 
 function App() {
-  useEffect(() => {
-    console.log("app", app);
-  }, []);
-
   return (
     <Router>
       <div className="w-full h-screen flex flex-col justify-start items-center">
