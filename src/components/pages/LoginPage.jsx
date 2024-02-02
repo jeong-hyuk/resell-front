@@ -36,6 +36,7 @@ const LoginPage = () => {
       console.log("user with signIn", userCredential.user);
       navigate("/");
       window.location.reload();
+      console.log("로그인 됨!!!");
     } catch (error) {
       const errorCode = error.code;
       const errorMessage = error.message;
