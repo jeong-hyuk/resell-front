@@ -5,10 +5,11 @@ import { BsFillPencilFill } from "react-icons/bs";
 import { auth } from "@/firebase";
 import { onAuthStateChanged } from "firebase/auth";
 import { signOut } from "firebase/auth";
+import User from "./User";
 
 export default function Navbar() {
   const navigate = useNavigate();
-
+  const [user, setUser] = useState();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
@@ -58,6 +59,7 @@ export default function Navbar() {
           <>
             <Link to="/login">로그인</Link>
             <Link to="/register">회원가입</Link>
+            {user && <User user={user} />}
           </>
         )}
       </nav>
