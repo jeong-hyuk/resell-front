@@ -5,12 +5,19 @@ import { BsFillPencilFill } from "react-icons/bs";
 import { auth } from "@/firebase";
 import { onAuthStateChanged } from "firebase/auth";
 import { signOut } from "firebase/auth";
-import User from "./User";
+// import { User } from "./User";
 
 export default function Navbar() {
   const navigate = useNavigate();
   const [user, setUser] = useState();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    onUserStateChange((user) => {
+      console.log(user);
+      setUser(user);
+    });
+  }, []);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -35,6 +42,7 @@ export default function Navbar() {
 
       // 로그아웃이 성공하면 다시 로그인 페이지로 이동
       navigate("/");
+      z;
       window.location.reload();
     } catch (error) {
       console.error("로그아웃 오류", error);

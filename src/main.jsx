@@ -19,8 +19,8 @@ import ProductDetail from "@/components/pages/ProductDetail";
 import NewProduct from "@/components/pages/NewProduct";
 import MyCart from "@/components/pages/MyCart";
 import LoginRequire from "@/components/pages/LoginRequire";
-import LoginPage from "./components/pages/LoginPage.jsx";
-import RegisterPage from "./components/pages/RegisterPage.jsx";
+import LoginPage from "@/components/pages/LoginPage.jsx";
+import RegisterPage from "@/components/pages/RegisterPage.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
