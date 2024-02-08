@@ -24,22 +24,3 @@ const firebaseConfig = {
 export const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const db = getFirestore(app);
-
-export function onUserStateChange(callback) {
-  onAuthStateChanged(auth, async (user) => {
-    const updatedUser = user ? await adminUser(user) : null;
-    callback(updatedUser);
-  });
-}
-
-async function adminUser(user) {
-  return get(ref(database, "admins")) //
-    .then((snapshot) => {
-      if (snapshot.exists()) {
-        const admins = snapshot.val();
-        const isAdmin = admins.includes(user.uid);
-        return { ...user, isAdmin };
-      }
-      return user;
-    });
-}

@@ -5,19 +5,19 @@ import { BsFillPencilFill } from "react-icons/bs";
 import { auth } from "@/firebase";
 import { onAuthStateChanged } from "firebase/auth";
 import { signOut } from "firebase/auth";
-// import { User } from "./User";
+import user from "./User";
 
 export default function Navbar() {
   const navigate = useNavigate();
   const [user, setUser] = useState();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  useEffect(() => {
-    onUserStateChange((user) => {
-      console.log(user);
-      setUser(user);
-    });
-  }, []);
+  // useEffect(() => {
+  //   onUserStateChange((user) => {
+  //     console.log(user);
+  //     setUser(user);
+  //   });
+  // }, []);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
