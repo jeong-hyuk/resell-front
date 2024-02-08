@@ -12,7 +12,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
-import App from "./App.jsx";
+import App from "@/App.jsx";
 import MainPage from "@/components/pages/MainPage";
 import AllProducts from "@/components/pages/AllProducts";
 import ProductDetail from "@/components/pages/ProductDetail";

@@ -12,13 +12,6 @@ export default function Navbar() {
   const [user, setUser] = useState();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  // useEffect(() => {
-  //   onUserStateChange((user) => {
-  //     console.log(user);
-  //     setUser(user);
-  //   });
-  // }, []);
-
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
